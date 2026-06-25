@@ -19,10 +19,6 @@ def p0_times_integration_1():
     # 3. Color Map 选 Pressure
     ui.combo_click("post.scene_properties.value_cell", "Pressure")
 
-    # 3.1 Value Range Min / Max
-    ui.item_input_value("post.scene_properties.value_range_min", 1.013250e+05)
-    ui.item_input_value("post.scene_properties.value_range_max", 1.013410e+05)
-
     # 4. 展开时间工具条
     if not ui.alias_exists_now("post.quickaccess.forward_step"):
         ui.item_click("post.quickaccess.toolbar_expand", 0, 8)
@@ -43,6 +39,7 @@ def p0_times_integration_1():
     for i in range(4):
         ui.item_input_value("post.quickaccess.animation_index", i)
         ui.wait_ui_idle()
+    ui.capture_renderview(8, "post.quickaccess")
 
     # 7. Index +1 / -1 按键
     for _ in range(3):
@@ -51,6 +48,7 @@ def p0_times_integration_1():
     for _ in range(3):
         ui.item_click("post.quickaccess.animation_index_down", 0, 8)
         ui.wait_ui_idle()
+    ui.capture_renderview(8, "post.quickaccess")
 
     # 8. 前进 / 后退 步进
     for _ in range(2):
@@ -68,4 +66,5 @@ def p0_times_integration_1():
 
     ui.item_click("post.quickaccess.play", 0, 8)
 
-    ui.capture_renderview(8)
+    
+    
