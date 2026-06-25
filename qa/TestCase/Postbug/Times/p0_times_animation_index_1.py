@@ -19,10 +19,6 @@ def p0_times_animation_index_1():
     # 3. Color Map 选 Pressure
     ui.combo_click("post.scene_properties.value_cell", "Pressure")
 
-    # 3.1 Value Range Min / Max
-    ui.item_input_value("post.scene_properties.value_range_min", 1.013250e+05)
-    ui.item_input_value("post.scene_properties.value_range_max", 1.013410e+05)
-
     # 4. 展开时间工具条（检测是否已展开）
     if not ui.alias_exists_now("post.quickaccess.forward_step"):
         ui.item_click("post.quickaccess.toolbar_expand", 0, 8)
@@ -33,4 +29,4 @@ def p0_times_animation_index_1():
         ui.item_input_value("post.quickaccess.animation_index", i)
         ui.wait_ui_idle()
 
-    ui.capture_renderview(8)
+    ui.capture_renderview(8, "post.quickaccess")
