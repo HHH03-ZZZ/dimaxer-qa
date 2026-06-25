@@ -11,6 +11,10 @@ def p0_color_style_1():
     # Color Map 选 Pressure
     ui.combo_click("post.scene_properties.value_cell", "Pressure")
 
+    # Value Range Min / Max
+    ui.item_input_value("post.scene_properties.value_range_min", 1.013250e+05)
+    ui.item_input_value("post.scene_properties.value_range_max", 1.013410e+05)
+
     # 打开 Color Style 下拉框
     ui.item_click("post.scene_properties.color_style", 0, 8)
 
